@@ -105,6 +105,9 @@ vim.o.relativenumber = true
 --  Experiment for yourself to see if you like it!
 -- vim.o.relativenumber = true
 
+-- set default indentation
+vim.o.shiftwidth = 4
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
