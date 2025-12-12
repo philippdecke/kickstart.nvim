@@ -204,7 +204,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- keybindings for quarto
-vim.keymap.set('n', '<leader>pcc', '<esc>i```{python}<cr><cr>```<esc>0', { desc = 'insert [p]ython [c]ode [c]hunk' })
+vim.keymap.set('n', '<leader>pcc', 'o<cr>```{python}<cr><cr>```<cr><esc>--i', { desc = 'insert [p]ython [c]ode [c]hunk' })
 vim.keymap.set('n', '<leader>pt', ':split term://ipython<cr>', { desc = 'open i[p]ython [t]erminal' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
@@ -326,7 +326,7 @@ require('lazy').setup({
       ]]
     end,
     config = function()
-      vim.keymap.set({ 'n', 'i' }, '<leader>sc', function()
+      vim.keymap.set('n', '<leader>sc', function()
         vim.cmd [[ call slime#send_cell() ]]
       end, { desc = '[s]end [c]ode to terminal' })
     end,
@@ -1024,7 +1024,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
